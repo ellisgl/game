@@ -1,0 +1,21 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: a2stuff/build-install-ca65-action@v1
+      - name: Build NES ROM
+        run: make release
+      - name: Upload ROM artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: TheGame.nes
+          path: build/dist/TheGame.nes
