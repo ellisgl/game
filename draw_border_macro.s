@@ -1,8 +1,8 @@
 ; Macro to draw a bordered box
 ; Example usage: DrawBoarder $20, $41, 25, $2A, $00 ; Draw box with '*' tile, default attribute
 .macro DrawBoarder start_hi, start_lo, rows, tile, attr
-    // .local helps localize variables to this macro,
-    // avoiding conflicts with other macros or main code.
+    ; .local helps localize variables to this macro,
+    ; avoiding conflicts with other macros or main code.
     .local box_loop
     .local draw_top
     .local top_inner

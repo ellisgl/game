@@ -1,6 +1,6 @@
 .macro Print start_hi, start_lo, text, attr
-    // .local helps localize variables to this macro,
-    // avoiding conflicts with other macros or main code.
+    ; .local helps localize variables to this macro,
+    ; avoiding conflicts with other macros or main code.
     .local print_msg
     .local done_msg
     LDA #start_hi
