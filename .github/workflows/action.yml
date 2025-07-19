@@ -20,7 +20,7 @@ jobs:
           git clone https://github.com/cc65/cc65.git /tmp/cc65
           cd /tmp/cc65
           make
-          sudo make install
+          sudo make install PREFIX=/usr/local
 
       - name: Build NES ROM
         run: make release
