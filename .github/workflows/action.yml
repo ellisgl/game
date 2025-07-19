@@ -15,7 +15,7 @@ jobs:
       - name: Build NES ROM
         run: make release
       - name: Upload ROM artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: TheGame.nes
           path: build/dist/TheGame.nes
