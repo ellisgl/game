@@ -11,9 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: a2stuff/build-install-ca65-action@v1
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y git make
+
+      - name: Install cc65
+        run: |
+          git clone https://github.com/cc65/cc65.git /tmp/cc65
+          cd /tmp/cc65
+          make
+          sudo make install
+
       - name: Build NES ROM
         run: make release
+
       - name: Upload ROM artifact
         uses: actions/upload-artifact@v4
         with:
