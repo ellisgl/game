@@ -1,0 +1,13 @@
+{
+    "name": "ellis/base45",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Ellis\\Base45\\": "src/"
+        }
+    },
+    "require": {
+        "mhauri/base45": "^0.1.1",
+        "chillerlan/php-qrcode": "^5.0"
+    }
+}
