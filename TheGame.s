@@ -3,7 +3,7 @@
 ; Pressing start at the start screen will go on to the next screen, which is only text.
 
 ; Memory-Mapped Input/Output (MMIO) registers
-; Basically we are created variables that map to the PPU's registers.
+; Basically we are creating variables that map to the PPU's registers.
 PPUCTRL   = $2000
 PPUMASK   = $2001
 PPUSTATUS = $2002
