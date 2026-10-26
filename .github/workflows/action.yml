@@ -35,15 +35,12 @@ jobs:
           path: build/dist/TheGame.nes
 
       - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.run_id }}
-          release_name: Release ${{ github.run_id }}
-          draft: false
-          prerelease: false
+          name: Release ${{ github.run_id }}
+          files: build/dist/TheGame.nes
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
